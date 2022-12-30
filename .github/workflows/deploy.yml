@@ -9,7 +9,7 @@ on:
 env:
   
   # alphanumeric string under 14 characters
-  RESOURCE_GROUP_NAME: kay-containerapp-test
+  RESOURCE_GROUP_NAME: kay4apps
 
   # specify your preferred region
   REGION: eastus
