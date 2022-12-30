@@ -132,8 +132,6 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: >
-          az acr login --name ${{ env.RESOURCE_GROUP_NAME }}acr --password rOreFZYV/zPkndFfAeefgTrFUmQ37aSuoIhzmpABL1+ACRC1OOq5
-          
           az containerapp registry set -n products -g ${{ env.RESOURCE_GROUP_NAME }} --server ${{ env.RESOURCE_GROUP_NAME }}acr.azurecr.io
 
           az containerapp update -n products -g ${{ env.RESOURCE_GROUP_NAME }} -i ${{ env.RESOURCE_GROUP_NAME }}acr.azurecr.io/${{ env.PRODUCTS_IMAGE }}:${{ github.sha }}
