@@ -125,7 +125,8 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: >
-         refresh_token=$(az acr login --name ${{ env.RESOURCE_GROUP_NAME }}acr. --password rOreFZYV/zPkndFfAeefgTrFUmQ37aSuoIhzmpABL1+ACRC1OOq5 --expose-token )
+         az acr login --name ${{ env.RESOURCE_GROUP_NAME }}acr. --password rOreFZYV/zPkndFfAeefgTrFUmQ37aSuoIhzmpABL1+ACRC1OOq5 
+         refresh_token=$(az acr login --name ${{ env.RESOURCE_GROUP_NAME }}acr.  --expose-token )
          docker login -u 00000000-0000-0000-0000-000000000000 --password-stdin ${{ env.RESOURCE_GROUP_NAME }}acr.azurecr.io <<< "$refresh_token"
 
     - name: Deploy Container Apps
