@@ -122,7 +122,6 @@ jobs:
           az extension add --name containerapp --yes
 
     - name: Login to ACR
-      uses: azure/CLI@v1
       run: |
         set -euo pipefail
         access_token=$(az account get-access-token --query accessToken -o tsv)
